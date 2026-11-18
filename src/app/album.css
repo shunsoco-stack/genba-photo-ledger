@@ -1,0 +1,295 @@
+/* A4写真帳の画面プレビュー */
+.print-help {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+.album-preview {
+  max-width: 840px;
+  margin: 0 auto;
+}
+.album-page {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 210/297;
+  background: white;
+  padding: 5%;
+  margin-bottom: 28px;
+  box-shadow: 0 3px 15px #20352918;
+  border: 1px solid #d8ded4;
+
+  overflow: hidden;
+}
+.album-cover {
+  display: flex;
+  flex-direction: column;
+}
+.cover-top {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #36563e;
+}
+.cover-title {
+  margin: 16% 0 13%;
+}
+.cover-title > p {
+  font-size: clamp(24px, 4vw, 37px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 35px;
+}
+.cover-title h2 {
+  font-size: clamp(17px, 2.5vw, 25px);
+  line-height: 1.9;
+  max-width: 92%;
+}
+.cover-rule {
+  margin-top: 30px;
+  width: 50px;
+  height: 4px;
+  background: #335a40;
+}
+.cover-info {
+  margin: 0;
+}
+.cover-info div {
+  display: grid;
+  grid-template-columns: 24% 1fr;
+  padding: 14px 0;
+  border-bottom: 1px solid #dce0d7;
+  font-size: 14px;
+}
+.cover-info dt {
+  color: #647262;
+}
+.cover-info dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.cover-demo {
+  font-size: 11px;
+  color: #647262;
+  margin-top: auto;
+  padding-bottom: 35px;
+}
+.album-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 2px solid #36563e;
+  padding-bottom: 12px;
+  margin-bottom: 17px;
+  font-size: 10px;
+}
+.album-header strong {
+  white-space: nowrap;
+  font-size: 14px;
+}
+.album-rows {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  height: 89%;
+  gap: 15px;
+}
+.album-row {
+  display: grid;
+  grid-template-columns: 53% minmax(0, 1fr);
+  gap: 12px;
+  border-bottom: 1px solid #cfd7cd;
+  padding-bottom: 15px;
+  break-inside: avoid;
+  min-height: 0;
+}
+.album-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f2ee;
+  min-height: 0;
+  overflow: hidden;
+}
+.album-photo canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.album-row table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.album-row th,
+.album-row td {
+  border: 1px solid #ced7cc;
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.album-row th {
+  width: 31%;
+  font-weight: 500;
+  background: #f0f3ed;
+}
+.album-row tr:last-child {
+  height: 36%;
+}
+.album-footer {
+  position: absolute;
+  bottom: 2.5%;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #687362;
+}
+
+/* 小画面では用紙全体を幅に収める */
+@media screen and (max-width: 760px) {
+  .cover-top {
+    font-size: 6px;
+    padding-bottom: 7px;
+  }
+  .cover-title {
+    margin: 12% 0 8%;
+  }
+  .cover-title > p {
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+  .cover-title h2 {
+    font-size: 12px;
+  }
+  .cover-rule {
+    margin-top: 15px;
+  }
+  .cover-info div {
+    font-size: 8px;
+    padding: 7px 0;
+  }
+  .cover-demo {
+    font-size: 7px;
+    padding-bottom: 14px;
+  }
+  .album-header {
+    font-size: 6px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+  }
+  .album-header strong {
+    font-size: 8px;
+  }
+  .album-rows {
+    gap: 6px;
+  }
+  .album-row {
+    gap: 5px;
+    padding-bottom: 6px;
+  }
+  .album-row table {
+    font-size: 6px;
+  }
+  .album-row th,
+  .album-row td {
+    padding: 2px;
+  }
+  .album-footer {
+    font-size: 6px;
+  }
+}
+
+/* 印刷・PDF出力 */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+@media print {
+  html,
+  body {
+    background: white;
+    font-size: 10pt;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .no-print,
+  .sidebar,
+  .topbar {
+    display: none !important;
+  }
+  .workspace {
+    margin: 0;
+  }
+  .main-content {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+  .app-fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  .album-preview {
+    max-width: none;
+    margin: 0;
+  }
+  .album-page {
+    width: 210mm;
+    height: 297mm;
+    aspect-ratio: auto;
+    padding: 14mm 12mm;
+    margin: 0;
+    box-shadow: none;
+    border: 0;
+    break-after: page;
+    break-inside: avoid;
+  }
+  .album-page:last-child {
+    break-after: auto;
+  }
+  .album-row {
+    break-inside: avoid;
+  }
+  .album-row table {
+    font-size: 9pt;
+  }
+  .album-header {
+    font-size: 9pt;
+  }
+  .album-footer {
+    bottom: 9mm;
+    left: 12mm;
+    right: 12mm;
+    font-size: 8pt;
+  }
+  .cover-title > p {
+    font-size: 30pt;
+  }
+  .cover-title h2 {
+    font-size: 21pt;
+  }
+  .cover-info div {
+    font-size: 12pt;
+  }
+}
+
+/* 長いメモを含む行の文字サイズ */
+.album-row.long-note table {
+  font-size: 9px;
+  line-height: 1.35;
+}
+@media screen and (max-width: 760px) {
+  .album-row.long-note table {
+    font-size: 5px;
+  }
+}
+@media print {
+  .album-row.long-note table {
+    font-size: 7pt;
+  }
+}

@@ -1,0 +1,133 @@
+/* 基本設定・和文タイポグラフィ */
+:root {
+  --ink: #243c34;
+  --muted: #62716b;
+  --green: #235640;
+  --border: #dce2da;
+  --surface: #ffffff;
+  --canvas: #f5f6f2;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+    "Noto Sans CJK JP", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+button,
+.button {
+  min-height: 44px;
+  padding: 10px 17px;
+  border: 1px solid #ccd5ce;
+  background: #fff;
+  border-radius: 7px;
+  color: var(--ink);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+button:hover,
+.button:hover {
+  background: #eaf0e9;
+  border-color: #839a89;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+button.primary,
+.button.primary {
+  color: white;
+  background: var(--green);
+  border-color: var(--green);
+}
+button.primary:hover,
+.button.primary:hover {
+  background: #163f2e;
+}
+button.danger {
+  color: #a02f2a;
+  border-color: #b9867a;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: #21683e;
+}
+:focus-visible {
+  outline: 3px solid #b88629;
+  outline-offset: 4px;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(26px, 2.3vw, 34px);
+  line-height: 1.45;
+  letter-spacing: 0.035em;
+  margin-bottom: 8px;
+}
+h2 {
+  font-size: 18px;
+  line-height: 1.6;
+}
+p {
+  margin-bottom: 16px;
+}
+small,
+.small {
+  font-size: 12px;
+}
+.muted {
+  color: var(--muted);
+}
+.amber {
+  color: #92631c;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 750;
+  color: #69796c;
+  letter-spacing: 0.19em;
+  margin-bottom: 8px;
+}
+.text-link {
+  color: var(--green);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.full-width {
+  width: 100%;
+}

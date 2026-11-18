@@ -1,0 +1,183 @@
+/* ナビゲーション・画面の骨格 */
+.sidebar {
+  width: 232px;
+  position: fixed;
+  inset: 0 auto 0 0;
+  padding: 32px 20px;
+  border-right: 1px solid var(--border);
+  background: #fcfcf9;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 750;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+}
+.brand small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: #fff6dd;
+  border-radius: 10px;
+  font-size: 25px;
+}
+.company {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 4px 27px;
+  padding: 20px 10px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.company > span:last-child {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.sidebar nav {
+  display: grid;
+  gap: 8px;
+}
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 49px;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.sidebar nav a span {
+  font-size: 21px;
+  width: 24px;
+  text-align: center;
+}
+.sidebar nav a.active {
+  background: #e7eee5;
+  color: #234d37;
+}
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 20px 10px 0;
+  font-size: 12px;
+  font-weight: 650;
+}
+.sidebar-bottom p {
+  margin: 8px 0 0;
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.local-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  background: #538759;
+  border-radius: 100%;
+}
+.workspace {
+  margin-left: 232px;
+}
+.topbar {
+  min-height: 69px;
+  padding: 16px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  background: #fcfcf9;
+  color: var(--muted);
+  font-size: 12px;
+}
+.demo-badge {
+  border: 1px solid #dbd3ba;
+  background: #f7f3e7;
+  color: #796635;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.main-content {
+  max-width: 1550px;
+  margin: auto;
+  padding: 33px 38px 60px;
+}
+.app-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.page-heading p:last-child {
+  margin-bottom: 0;
+}
+.page-heading > .primary {
+  flex-shrink: 0;
+}
+.notice {
+  padding: 12px 16px;
+  border: 1px solid #c8d9bd;
+  border-radius: 7px;
+  background: #eef4e8;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  overflow-wrap: anywhere;
+}
+.notice button {
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.working {
+  position: sticky;
+  top: 10px;
+  z-index: 20;
+  padding: 14px;
+  border-radius: 8px;
+  background: #294f3f;
+  color: white;
+  margin-bottom: 15px;
+}
+.loading {
+  max-width: 640px;
+  margin: 15vh auto;
+  padding: 30px;
+}
+.loading .brand-mark {
+  margin-bottom: 24px;
+}
+
+/* ブランドの操作領域 */
+.brand {
+  min-height: 44px;
+}

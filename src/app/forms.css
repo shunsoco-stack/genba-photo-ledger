@@ -1,0 +1,162 @@
+/* 入力・フォーム・共通部品 */
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 650;
+  min-width: 0;
+}
+input:not([type="checkbox"]),
+select,
+textarea {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #c8d1c8;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+}
+textarea {
+  resize: vertical;
+}
+input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+input[type="date"],
+input[type="time"] {
+  appearance: none;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.span-two {
+  grid-column: 1 / -1;
+}
+.form-grid fieldset {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px;
+  min-width: 0;
+}
+.check-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+.check-list label,
+.checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 26px;
+  margin-bottom: 24px;
+}
+.narrow {
+  max-width: 850px;
+}
+.action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.file-button {
+  position: relative;
+}
+.file-button input:focus-visible + label {
+  outline: 3px solid #b88629;
+  outline-offset: 4px;
+}
+.file-button input:disabled + label {
+  opacity: 0.5;
+  cursor: wait;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px !important;
+  height: 1px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0 !important;
+}
+.empty {
+  border: 1px dashed #bbcbbb;
+  border-radius: 8px;
+  padding: 44px 24px;
+  text-align: center;
+  background: #fff;
+}
+.hint-panel {
+  margin-top: 30px;
+  padding: 23px 25px;
+  border: 1px solid #d8e0d3;
+  background: #eef1e9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hint-panel p {
+  font-size: 12px;
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+.hint-panel .text-link {
+  margin-left: auto;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.hint-symbol {
+  font-size: 33px;
+  color: #52704b;
+}
+.backup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.feature-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: #eaf0e6;
+  border-radius: 10px;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.prose {
+  max-width: 900px;
+  line-height: 1.95;
+}
+.prose h2:not(:first-child) {
+  margin-top: 28px;
+}
+.prose li {
+  margin-bottom: 16px;
+}
+.reset-panel {
+  max-width: 900px;
+}
